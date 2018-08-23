@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from './Button';
-import GoldenAcorn from './GoldenAcorn';
+// import GoldenAcorn from './withState/GoldenAcorn';
+import { Provider } from 'react-redux';
+import App from './withRedux/App';
+import store from './withRedux/store';
 
 ReactDOM.render(
   // <Button name="buy it" />,
-  <GoldenAcorn />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root'),
 );
